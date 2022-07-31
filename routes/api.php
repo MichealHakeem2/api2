@@ -22,22 +22,22 @@ use App\Http\Controllers\TrackesController;
 //public route
 //student
 Route::get('student/index', "StudentController@index");
-Route::get('student/show', "StudentController@show");
+Route::get('student/show/{id}', "StudentController@show");
 //admin
 Route::get('admin/index', "AdminController@index");
-Route::get('admin/show', "AdminController@show");
+Route::get('admin/show/{id}', "AdminController@show");
 //trackes
 Route::get('trackes/index', "TrackesController@index");
-Route::get('trackes/show', "TrackesController@show");
+Route::get('trackes/show/{id}', "TrackesController@show");
 //levels
 Route::get('levels/index', "LevelsController@index");
-Route::get('levels/show', "LevelsController@show");
+Route::get('levels/show/{id}', "LevelsController@show");
 //courses
 Route::get('courses/index', "CoursesController@index");
-Route::get('courses/show', "CoursesController@show");
+Route::get('courses/show/{id}', "CoursesController@show");
 //rating
 Route::get('rating/index', "RatingController@index");
-Route::get('rating/show', "RatingController@show");
+Route::get('rating/show/{id}', "RatingController@show");
 Route::post('register',"AuthController@register");
 Route::post('login/admin',"AdminController@loginAdmin");
 Route::post('login',"AuthController@login");
