@@ -23,7 +23,7 @@ class AdminController extends Controller
             "phone"=>"required|string|min:10|max:22|unique:admin,phone",
             "image"=>"required|string|max:230",
             "email"=>"required|string|min:14|max:250|unique:admin,email",
-            "password"=>"required|string",
+            "password"=>"required|string|min:8",
             "role"=>"required|numeric",
         ]);
         // $admin=Admin::create($request->all());
@@ -61,7 +61,7 @@ class AdminController extends Controller
             "phone"=>"required|string|min:10|max:22|unique:admin,phone",
             "image"=>"required|string|max:230",
             "email"=>"required|string|min:14|max:250|unique:admin,email",
-            "password"=>"required|string",
+            "password"=>"required|string|min:8",
             "role"=>"required|numeric",
         ]);
         $admin=Admin::find($id);
@@ -71,7 +71,7 @@ class AdminController extends Controller
     public function loginAdmin(Request $request){
         $fileds=$request->validate([
             "email"=>"required|string",
-            "password"=>"required|string",
+            "password"=>"required|string|min:8",
         ]);
         $admin=admin::where("email",$fileds['email'])->first();
         if(!$admin || !$fileds['password']){
